@@ -24,7 +24,8 @@ public interface RentalRepository extends JpaRepository<Rental, Long> {
                     "c.customer_id ORDER BY COUNT(*) DESC LIMIT 1", nativeQuery = true)
     Long findMostFrequentCustomerId();
 
-    @Query(value = "SELECT r FROM Rental r WHERE r.rentalDate = :date")
+    //@Query(value = "SELECT r FROM Rental r WHERE r.rentalDate = :date")
+    @Query("SELECT r FROM Rental r WHERE DATE(r.rentalDate) = DATE(:date)")
     List<Rental> findByRentalDate(@Param("date") Date date);
 
 

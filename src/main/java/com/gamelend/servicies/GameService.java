@@ -1,8 +1,6 @@
 package com.gamelend.servicies;
 
-import com.gamelend.entities.Customer;
 import com.gamelend.entities.Game;
-import com.gamelend.entities.Rental;
 import com.gamelend.repositories.CustomerRepository;
 import com.gamelend.repositories.GameRepository;
 import com.gamelend.repositories.RentalRepository;
@@ -19,6 +17,7 @@ public class GameService {
     private final GameRepository gameRepository;
     private final RentalRepository rentalRepository;
     private final CustomerRepository customerRepository;
+
 
     @Transactional
     public Game createGame(Game game) {
